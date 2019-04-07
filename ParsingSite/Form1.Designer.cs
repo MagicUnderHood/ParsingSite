@@ -53,6 +53,7 @@
             this.siteAdress.Name = "siteAdress";
             this.siteAdress.Size = new System.Drawing.Size(538, 32);
             this.siteAdress.TabIndex = 1;
+            this.siteAdress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.siteAdress_KeyDown);
             // 
             // outputText
             // 
@@ -99,6 +100,15 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void siteAdress_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if(e.KeyCode == System.Windows.Forms.Keys.Enter)
+            {
+                GetInfoSiteButton_Click(sender, e);
+            }
+            return;
         }
 
         #endregion

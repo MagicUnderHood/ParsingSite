@@ -24,11 +24,22 @@ namespace ParsingSite
 
             HtmlWeb web = new HtmlWeb();
 
-            var htmlDoc = web.Load(html);
+            try
+            {
+                var htmlDoc = web.Load(html);
 
-            var node = htmlDoc.DocumentNode.SelectSingleNode("//head/title");
-            
-            outputText.Text = node.InnerHtml;
+                var node = htmlDoc.DocumentNode.SelectSingleNode("//head/title");
+
+                outputText.Text = node.InnerHtml;
+            }
+            catch (Exception exc)
+            {
+#if DEBUG
+                outputText.Text = exc.Data.ToString();
+#else
+                outputText.Text = "Invalid site adress";
+#endif
+            }
         }
     }
 }
