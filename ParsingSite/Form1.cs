@@ -28,7 +28,7 @@ namespace ParsingSite
 
             var node = htmlDoc.DocumentNode.SelectSingleNode("//head/title");
             
-            outputText.Text = node.OuterHtml;
+            outputText.Text = node.InnerHtml;
         }
     }
 }
