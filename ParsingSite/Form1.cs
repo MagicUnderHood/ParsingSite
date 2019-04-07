@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HtmlAgilityPack;
 
 namespace ParsingSite
 {
@@ -15,6 +16,19 @@ namespace ParsingSite
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void GetInfoSiteButton_Click(object sender, EventArgs e)
+        {
+            var html = siteAdress.Text;
+
+            HtmlWeb web = new HtmlWeb();
+
+            var htmlDoc = web.Load(html);
+
+            var node = htmlDoc.DocumentNode.SelectSingleNode("//head/title");
+            
+            outputText.Text = node.OuterHtml;
         }
     }
 }
