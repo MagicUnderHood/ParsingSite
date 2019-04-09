@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
+using Core;
 
 namespace ParsingSite
 {
@@ -20,6 +14,11 @@ namespace ParsingSite
 
         private void GetInfoSiteButton_Click(object sender, EventArgs e)
         {
+            if (!InternetCheck.CheckForInternetConnection())
+            {
+                outputText.Text = "You haven't internet connection";
+                return;
+            }
             var html = siteAdress.Text;
 
             HtmlWeb web = new HtmlWeb();
