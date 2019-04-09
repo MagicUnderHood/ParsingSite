@@ -42,7 +42,7 @@
             this.GetInfoSiteButton.Name = "GetInfoSiteButton";
             this.GetInfoSiteButton.Size = new System.Drawing.Size(191, 49);
             this.GetInfoSiteButton.TabIndex = 0;
-            this.GetInfoSiteButton.Text = "Get info of site";
+            this.GetInfoSiteButton.Text = Properties.Resources.getInfoOfSite;
             this.GetInfoSiteButton.UseVisualStyleBackColor = true;
             this.GetInfoSiteButton.Click += new System.EventHandler(this.GetInfoSiteButton_Click);
             // 
@@ -73,7 +73,7 @@
             this.labelEnter.Name = "labelEnter";
             this.labelEnter.Size = new System.Drawing.Size(146, 26);
             this.labelEnter.TabIndex = 3;
-            this.labelEnter.Text = "Enter the site:";
+            this.labelEnter.Text = Properties.Resources.enterSite;
             // 
             // labelResult
             // 
@@ -83,7 +83,7 @@
             this.labelResult.Name = "labelResult";
             this.labelResult.Size = new System.Drawing.Size(158, 26);
             this.labelResult.TabIndex = 4;
-            this.labelResult.Text = "Title of the site:";
+            this.labelResult.Text = Properties.Resources.titleOfSite;
             // 
             // Form1
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.siteAdress);
             this.Controls.Add(this.GetInfoSiteButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = Properties.Resources.form1Name;
             this.ResumeLayout(false);
             this.PerformLayout();
 

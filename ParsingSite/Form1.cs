@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using Core;
+using System.Resources;
 
 namespace ParsingSite
 {
@@ -16,7 +17,7 @@ namespace ParsingSite
         {
             if (!InternetCheck.CheckForInternetConnection())
             {
-                outputText.Text = "You haven't internet connection";
+                outputText.Text = Properties.Resources.noInternetMessage;
                 return;
             }
             var html = siteAdress.Text;
@@ -36,7 +37,7 @@ namespace ParsingSite
 #if DEBUG
                 outputText.Text = exc.Data.ToString();
 #else
-                outputText.Text = "Invalid site adress";
+                outputText.Text = Properties.Resources.invalidSiteAdress;
 #endif
             }
         }
